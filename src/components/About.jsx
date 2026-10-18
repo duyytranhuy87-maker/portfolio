@@ -62,7 +62,7 @@ export function About() {
                     <div>
                         <h3 className="text-2xl xl:text-4xl font-display font-black text-[#333] tracking-tighter mb-4">Experience</h3>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
-                            {experience.slice(0, 4).map((exp, index) => (
+                            {experience.map((exp, index) => (
                                 <div key={index} className="flex items-start gap-3">
                                     <span className="font-bold text-[#333] text-sm xl:text-base whitespace-nowrap w-[130px] xl:w-[150px] shrink-0">{exp.year}</span>
                                     <span className="text-[#ccc] font-bold text-sm xl:text-base shrink-0">|</span>

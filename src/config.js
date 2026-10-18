@@ -14,7 +14,7 @@ export const PORTFOLIO_DATA = {
 
   about: {
     title: "ABOUT ME",
-    bio: "Tôi là một Video Editor với 4 năm kinh nghiệm, theo đuổi storytelling điện ảnh, nơi mỗi khung hình, nhịp dựng và âm thanh hòa quyện để dẫn dắt cảm xúc và tạo nên những trải nghiệm thị giác giàu chiều sâu. Tôi đặc biệt có thế mạnh trong việc sản xuất nội dung video cho lĩnh vực Thẩm mỹ và Fitness, nơi hình ảnh không chỉ đẹp mà còn phải truyền tải được cảm xúc và giá trị.",
+    bio: "Tôi là Video Editor với 4 năm kinh nghiệm, theo đuổi storytelling điện ảnh, nơi mỗi khung hình, nhịp dựng và âm thanh hòa quyện để dẫn dắt cảm xúc và tạo nên những trải nghiệm thị giác giàu chiều sâu. Tôi có thế mạnh trong sản xuất nội dung video cho lĩnh vực Thẩm mỹ và Fitness. Bên cạnh đó, tôi có kinh nghiệm thực chiến trong sản xuất video bán hàng TikTok/Reels, biên tập livestream highlight và tối ưu quy trình dựng video, với sản lượng 130 – 150 video final mỗi tháng. Tôi luôn hướng đến những sản phẩm không chỉ đẹp về hình ảnh mà còn truyền tải hiệu quả thông điệp và giá trị.",
     avatar: "/photo/EMS02484.jpg", 
     education: {
       school: "Hà Nội",
@@ -43,6 +43,45 @@ export const PORTFOLIO_DATA = {
         { type: "short", url: "https://www.youtube.com/embed/mnfAGF9QdMQ" },
         { type: "short", url: "https://www.youtube.com/embed/poJRzhDXvuQ" },
         { type: "short", url: "https://www.youtube.com/embed/FVTgpWzj9ig" }
+      ],
+    },
+    {
+      title: "BAMOZO",
+      category: "TIKTOK",
+      description: "Sản xuất video bán hàng ngắn TikTok/Reels, biên tập livestream highlight & tối ưu quy trình dựng.",
+      viewMoreLink: "https://drive.google.com/drive/folders/1-ZIuEMP7OrR_WNprUlohDvegIgckrbK5?usp=sharing",
+      videos: [
+        { type: "short", url: "https://www.youtube.com/embed/Cnk5F4RMK04" },
+        { type: "short", url: "https://www.youtube.com/embed/vepkfJIaDVU" },
+        { type: "short", url: "https://www.youtube.com/embed/b2qYYJeVtd4" },
+        { type: "short", url: "https://www.youtube.com/embed/ixMAMeWDIwk" },
+        { type: "short", url: "https://www.youtube.com/embed/CgxummuM83s" },
+        { type: "short", url: "https://www.youtube.com/embed/quNHBtg6UPQ" },
+        { type: "short", url: "https://www.youtube.com/embed/0KCiGvP-FQg" },
+        { type: "short", url: "https://www.youtube.com/embed/IKHDPk8XV2Q" },
+        { type: "short", url: "https://www.youtube.com/embed/zsdnnm2801Y" }
+      ],
+    },
+    {
+      title: "Video AI",
+      category: "AI VIDEO",
+      description: "Ứng dụng trí tuệ nhân tạo (AI) trong sáng tạo kịch bản, hình ảnh và sản xuất video ngắn.",
+      videos: [
+        { type: "short", url: "https://www.youtube.com/embed/JiA4_B_zONY" },
+        { type: "short", url: "https://www.youtube.com/embed/4M6hThRX46c" },
+        { type: "short", url: "https://www.youtube.com/embed/TS2sKUPm5zU" }
+      ],
+    },
+    {
+      title: "Renix",
+      category: "HIGHLIGHT / RECAP",
+      description: "Biên tập video sự kiện, khai trương & recap doanh nghiệp với nhịp dựng điện ảnh ấn tượng.",
+      viewMoreLink: "https://drive.google.com/file/d/1i6eYeRV9PMx7DxqCuyhBm5EEjo2Hn2k2/view",
+      videos: [
+        { type: "long", url: "https://www.youtube.com/embed/KQrmnldBUCY" },
+        { type: "short", url: "https://www.youtube.com/embed/iTK70anZNVg" },
+        { type: "short", url: "https://www.youtube.com/embed/OIlwtnppdU4" },
+        { type: "short", url: "https://www.youtube.com/embed/VdZtR7enBeA" }
       ],
     },
     {
@@ -154,6 +193,18 @@ export const PORTFOLIO_DATA = {
   ],
 
   experience: [
+    {
+      year: "T10-2026 - Nay",
+      company: "Freelancer",
+      role: "Video Editor",
+      description: "",
+    },
+    {
+      year: "T8-2026 - T10-2026",
+      company: "Công Ty TNHH Đầu Tư Thương Mại Và Sản Xuất Chính Phát (BAMOZO)",
+      role: "Video Editor",
+      description: "Sản xuất video bán hàng ngắn TikTok/Reels, edit & tái sử dụng clip livestream, phối hợp với KOC, đội livestream & sale",
+    },
     {
       year: "2024 - 2026",
       company: "Thẩm mỹ Trung Anh",
