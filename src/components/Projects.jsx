@@ -8,8 +8,47 @@ const getYoutubeId = (url) => {
     return match ? match[1] : null;
 };
 
+function VideoItem({ video, index, projectTitle, onPlayVideo }) {
+    const yId = getYoutubeId(video.url);
+    const thumbUrl = yId ? `https://img.youtube.com/vi/${yId}/maxresdefault.jpg` : "";
+    const isShort = video.type === "short";
+
+    return (
+        <div
+            onClick={() => onPlayVideo(video.url)}
+            className={`relative bg-[#222] overflow-hidden group/item cursor-pointer hover:shadow-xl hover:-translate-y-1 transition-all duration-300 rounded-sm border border-[#ddd] ${isShort
+                ? 'flex-none w-[calc(50%-0.5rem)] md:w-[calc(33.333%-0.666rem)]'
+                : 'flex-1 min-w-[calc(100%)] md:min-w-[calc(50%-0.5rem)]'
+                }`}
+        >
+            <div style={{ aspectRatio: isShort ? '9/16' : '16/9' }} className="w-full relative bg-black">
+                <img
+                    src={thumbUrl}
+                    alt={`${projectTitle} - Video ${index + 1}`}
+                    className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover/item:opacity-100 transition-all duration-700 group-hover/item:scale-105"
+                    onError={(e) => { e.target.src = `https://img.youtube.com/vi/${yId}/hqdefault.jpg`; }}
+                />
+
+                {/* Adobe-style corner markers */}
+                <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-white/50 z-20"></div>
+                <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-white/50 z-20"></div>
+                <div className="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2 border-white/50 z-20"></div>
+                <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-white/50 z-20"></div>
+
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-30">
+                    <div className="w-12 h-12 md:w-16 md:h-16 bg-[#E25A27] text-white rounded-full flex items-center justify-center opacity-0 group-hover/item:opacity-100 group-hover/item:scale-110 transition-all duration-300 shadow-lg">
+                        <Play fill="currentColor" size={24} className="ml-1 md:ml-1.5 w-5 h-5 md:w-6 md:h-6" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
+
 function ProjectCard({ project, index, onPlayVideo }) {
     const hasVideos = project.videos && project.videos.length > 0;
+    const shorts = project.videos?.filter(v => v.type === "short") || [];
+    const longs = project.videos?.filter(v => v.type !== "short") || [];
 
     return (
         <div className="flex flex-col group w-full relative mb-12 md:mb-20">
@@ -52,46 +91,37 @@ function ProjectCard({ project, index, onPlayVideo }) {
                 </div>
             </div>
 
-            {/* Selective Stretch Layout: Longs fill gaps, Shorts stay compact */}
-            <div className="flex flex-wrap gap-4 w-full relative z-10 items-start">
+            {/* Video Grid: Separate rows for Shorts and Longs so aspect ratios never clash */}
+            <div className="flex flex-col gap-4 w-full relative z-10">
                 {hasVideos ? (
-                    project.videos.map((video, i) => {
-                        const yId = getYoutubeId(video.url);
-                        const thumbUrl = yId ? `https://img.youtube.com/vi/${yId}/maxresdefault.jpg` : "";
-                        const isShort = video.type === "short";
-
-                        return (
-                            <div
-                                key={i}
-                                onClick={() => onPlayVideo(video.url)}
-                                className={`relative bg-[#222] overflow-hidden group/item cursor-pointer hover:shadow-xl hover:-translate-y-1 transition-all duration-300 rounded-sm border border-[#ddd] ${isShort
-                                    ? 'flex-none w-[calc(50%-0.5rem)] md:w-[calc(33.333%-0.666rem)]'
-                                    : 'flex-1 min-w-[calc(100%)] md:min-w-[calc(50%-0.5rem)]'
-                                    }`}
-                            >
-                                <div style={{ aspectRatio: isShort ? '9/16' : '16/9' }} className="w-full relative bg-black">
-                                    <img
-                                        src={thumbUrl}
-                                        alt={`${project.title} - Video ${i + 1}`}
-                                        className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover/item:opacity-100 transition-all duration-700 group-hover/item:scale-105"
-                                        onError={(e) => { e.target.src = `https://img.youtube.com/vi/${yId}/hqdefault.jpg`; }}
+                    <>
+                        {shorts.length > 0 && (
+                            <div className="flex flex-wrap gap-4 w-full items-start">
+                                {shorts.map((video, i) => (
+                                    <VideoItem
+                                        key={`short-${i}`}
+                                        video={video}
+                                        index={i}
+                                        projectTitle={project.title}
+                                        onPlayVideo={onPlayVideo}
                                     />
-
-                                    {/* Adobe-style corner markers */}
-                                    <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-white/50 z-20"></div>
-                                    <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-white/50 z-20"></div>
-                                    <div className="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2 border-white/50 z-20"></div>
-                                    <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-white/50 z-20"></div>
-
-                                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-30">
-                                        <div className="w-12 h-12 md:w-16 md:h-16 bg-[#E25A27] text-white rounded-full flex items-center justify-center opacity-0 group-hover/item:opacity-100 group-hover/item:scale-110 transition-all duration-300 shadow-lg">
-                                            <Play fill="currentColor" size={24} className="ml-1 md:ml-1.5 w-5 h-5 md:w-6 md:h-6" />
-                                        </div>
-                                    </div>
-                                </div>
+                                ))}
                             </div>
-                        )
-                    })
+                        )}
+                        {longs.length > 0 && (
+                            <div className="flex flex-wrap gap-4 w-full items-start">
+                                {longs.map((video, i) => (
+                                    <VideoItem
+                                        key={`long-${i}`}
+                                        video={video}
+                                        index={shorts.length + i}
+                                        projectTitle={project.title}
+                                        onPlayVideo={onPlayVideo}
+                                    />
+                                ))}
+                            </div>
+                        )}
+                    </>
                 ) : (
                     <div className="w-full aspect-video bg-[#e5e5e5] border border-[#ccc] border-dashed flex items-center justify-center rounded-sm">
                         <span className="text-[#888] font-display font-bold text-xl uppercase tracking-widest">

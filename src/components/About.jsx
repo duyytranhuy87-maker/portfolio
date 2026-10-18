@@ -12,7 +12,7 @@ export function About() {
     };
 
     return (
-        <section id="about" className="bg-[#f2f2f2] w-full min-h-[100svh] h-auto lg:h-[100svh] py-24 lg:py-0 overflow-hidden relative border-b-brutal flex items-center font-sans select-none">
+        <section id="about" className="bg-[#f2f2f2] w-full min-h-[100svh] py-16 lg:py-16 overflow-hidden relative border-b-brutal flex items-center font-sans select-none">
 
             {/* Top UI Bar (Fake App Menu) */}
             <div className="absolute top-6 left-6 md:left-10 flex items-center gap-4 md:gap-6 z-50">
@@ -28,31 +28,31 @@ export function About() {
                 </div>
             </div>
 
-            <div className="w-full h-full flex flex-col lg:flex-row relative pt-12 lg:pt-20 pb-12 px-6 sm:px-12 md:px-16 lg:px-24 xl:px-40">
+            <div className="w-full h-full flex flex-col lg:flex-row relative pt-8 lg:pt-14 pb-8 px-6 sm:px-12 md:px-16 lg:px-24 xl:px-40">
 
-                {/* --- LEFT COLUMN: CONTENT (55%) --- */}
-                <div className="w-full lg:w-[55%] h-full flex flex-col justify-evenly z-10 relative lg:pr-6 xl:pr-12 py-4 gap-12 lg:gap-0">
+                {/* --- LEFT COLUMN: CONTENT (56%) --- */}
+                <div className="w-full lg:w-[56%] flex flex-col justify-start gap-4 xl:gap-6 z-10 relative lg:pr-6 xl:pr-10 py-2">
 
                     {/* Header: Name and Bio */}
-                    <div className="flex flex-col items-start gap-2 w-full">
-                        <h2 className="text-5xl sm:text-[3rem] xl:text-[4rem] 2xl:text-[5rem] font-display font-black text-[#333] leading-none tracking-tighter m-0 whitespace-nowrap">
+                    <div className="flex flex-col items-start gap-1.5 w-full">
+                        <h2 className="text-3xl sm:text-4xl xl:text-[3.25rem] 2xl:text-[3.75rem] font-display font-black text-[#333] leading-none tracking-tight m-0 whitespace-nowrap">
                             Trần Văn Dũng
                         </h2>
-                        <p className="text-sm xl:text-base text-[#555] font-medium leading-relaxed max-w-2xl mt-1">
+                        <p className="text-xs sm:text-sm xl:text-[14.5px] text-[#555] font-medium leading-relaxed max-w-2xl mt-0.5">
                             "{about.bio}"
                         </p>
                     </div>
 
                     {/* Creative field */}
                     <div>
-                        <h3 className="text-2xl xl:text-4xl font-display font-black text-[#333] tracking-tighter mb-4">Creative field</h3>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6">
+                        <h3 className="text-lg sm:text-xl xl:text-2xl font-display font-black text-[#333] tracking-tight mb-2">Creative field</h3>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-2.5 gap-x-6">
                             {about.skills.map((skill, idx) => (
-                                <div key={idx} className="flex items-center gap-3">
-                                    <div className="w-10 h-10 xl:w-12 xl:h-12 rounded-xl bg-[#E25A27] flex items-center justify-center shrink-0">
-                                        {skillIcons[skill] || <div className="w-3 h-3 bg-white rounded-full"></div>}
+                                <div key={idx} className="flex items-center gap-2.5">
+                                    <div className="w-8 h-8 xl:w-9 xl:h-9 rounded-lg bg-[#E25A27] flex items-center justify-center shrink-0">
+                                        {skillIcons[skill] || <div className="w-2.5 h-2.5 bg-white rounded-full"></div>}
                                     </div>
-                                    <span className="text-lg xl:text-xl font-bold text-[#333] tracking-tight">/{skill}/</span>
+                                    <span className="text-sm xl:text-base font-bold text-[#333] tracking-tight">/{skill}/</span>
                                 </div>
                             ))}
                         </div>
@@ -60,15 +60,15 @@ export function About() {
 
                     {/* Experience */}
                     <div>
-                        <h3 className="text-2xl xl:text-4xl font-display font-black text-[#333] tracking-tighter mb-4">Experience</h3>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
+                        <h3 className="text-lg sm:text-xl xl:text-2xl font-display font-black text-[#333] tracking-tight mb-2">Experience</h3>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 xl:gap-y-2.5 gap-x-6">
                             {experience.map((exp, index) => (
-                                <div key={index} className="flex items-start gap-3">
-                                    <span className="font-bold text-[#333] text-sm xl:text-base whitespace-nowrap w-[130px] xl:w-[150px] shrink-0">{exp.year}</span>
-                                    <span className="text-[#ccc] font-bold text-sm xl:text-base shrink-0">|</span>
+                                <div key={index} className="flex items-start gap-2.5">
+                                    <span className="font-bold text-[#333] text-xs xl:text-sm whitespace-nowrap w-[120px] xl:w-[135px] shrink-0">{exp.year}</span>
+                                    <span className="text-[#ccc] font-bold text-xs xl:text-sm shrink-0">|</span>
                                     <div className="flex flex-col">
-                                        <span className="font-bold text-[#333] text-sm xl:text-base leading-tight">{exp.role}</span>
-                                        <span className="text-[#777] font-medium text-xs xl:text-sm mt-0.5 leading-tight">{exp.company}</span>
+                                        <span className="font-bold text-[#333] text-xs xl:text-sm leading-snug">{exp.role}</span>
+                                        <span className="text-[#777] font-medium text-[11px] xl:text-xs mt-0.5 leading-tight">{exp.company}</span>
                                     </div>
                                 </div>
                             ))}
@@ -76,13 +76,13 @@ export function About() {
                     </div>
 
                     {/* Software */}
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-4 xl:gap-6">
-                        <h3 className="text-2xl xl:text-4xl font-display font-black text-[#333] tracking-tighter leading-none whitespace-nowrap">Software</h3>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-3 xl:gap-5">
+                        <h3 className="text-lg sm:text-xl xl:text-2xl font-display font-black text-[#333] tracking-tight leading-none whitespace-nowrap">Software</h3>
                         <div className="flex flex-wrap gap-2 items-center">
                             {about.tools.map((tool) => (
                                 <div
                                     key={tool.name}
-                                    className={`w-10 h-10 xl:w-14 xl:h-14 rounded-lg flex items-center justify-center font-black text-xs xl:text-xl shadow-sm ${tool.name === 'Capcut' ? 'bg-white p-1.5' : ''}`}
+                                    className={`w-8 h-8 xl:w-10 xl:h-10 rounded-lg flex items-center justify-center font-black text-xs xl:text-base shadow-sm ${tool.name === 'Capcut' ? 'bg-white p-1' : ''}`}
                                     style={tool.name !== 'Capcut' ? { color: tool.color, backgroundColor: tool.bg } : {}}
                                 >
                                     {tool.name === 'Capcut' ? (
@@ -95,8 +95,8 @@ export function About() {
 
                 </div>
 
-                {/* --- RIGHT COLUMN: IMAGE & UI ELEMENTS (45%) --- */}
-                <div className="w-full h-[400px] lg:h-full lg:w-[45%] xl:w-[35%] relative z-0 mt-12 lg:mt-0">
+                {/* --- RIGHT COLUMN: IMAGE & UI ELEMENTS (44%) --- */}
+                <div className="w-full h-[400px] lg:h-full lg:w-[44%] xl:w-[36%] relative z-0 mt-12 lg:mt-0">
 
                     {/* Bounding Box behind image */}
                     <div className="absolute top-[10%] lg:top-[10%] bottom-[5%] lg:bottom-[5%] left-[5%] right-[5%] lg:right-0 lg:left-[15%] border-[1px] border-[#E25A27] pointer-events-none z-10 opacity-70">
@@ -137,7 +137,7 @@ export function About() {
                     </div>
 
                     {/* Pen Tool Path */}
-                    <svg className="hidden lg:block absolute top-[40%] left-[-20%] w-[50%] h-[30%] z-10 overflow-visible" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <svg className="hidden xl:block absolute top-[40%] left-[0%] w-[45%] h-[28%] z-10 overflow-visible" viewBox="0 0 100 100" preserveAspectRatio="none">
                         <path d="M 0 0 C 40 10, 60 50, 80 100" fill="none" stroke="#E25A27" strokeWidth="1" />
                         <rect x="-2" y="-2" width="4" height="4" fill="white" stroke="#E25A27" strokeWidth="1" />
                         <rect x="38" y="25" width="4" height="4" fill="white" stroke="#E25A27" strokeWidth="1" />
@@ -145,8 +145,8 @@ export function About() {
                     </svg>
 
                     {/* Pen Tool Icon */}
-                    <div className="hidden lg:block absolute top-[35%] left-[-15%] z-20 -rotate-45">
-                        <PenTool size={36} className="text-[#222] fill-[#222]" />
+                    <div className="hidden xl:block absolute top-[36%] left-[2%] z-20 -rotate-45">
+                        <PenTool size={30} className="text-[#222] fill-[#222]" />
                     </div>
 
                     {/* Cursor Icon */}

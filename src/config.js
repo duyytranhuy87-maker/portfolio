@@ -76,12 +76,11 @@ export const PORTFOLIO_DATA = {
       title: "Renix",
       category: "HIGHLIGHT / RECAP",
       description: "Biên tập video sự kiện, khai trương & recap doanh nghiệp với nhịp dựng điện ảnh ấn tượng.",
-      viewMoreLink: "https://drive.google.com/file/d/1i6eYeRV9PMx7DxqCuyhBm5EEjo2Hn2k2/view",
       videos: [
-        { type: "long", url: "https://www.youtube.com/embed/KQrmnldBUCY" },
         { type: "short", url: "https://www.youtube.com/embed/iTK70anZNVg" },
         { type: "short", url: "https://www.youtube.com/embed/OIlwtnppdU4" },
-        { type: "short", url: "https://www.youtube.com/embed/VdZtR7enBeA" }
+        { type: "short", url: "https://www.youtube.com/embed/VdZtR7enBeA" },
+        { type: "long", url: "https://www.youtube.com/embed/KQrmnldBUCY" }
       ],
     },
     {
