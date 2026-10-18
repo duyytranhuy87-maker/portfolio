@@ -34,11 +34,11 @@ export function About() {
                 <div className="w-full lg:w-[56%] flex flex-col justify-start gap-4 xl:gap-6 z-10 relative lg:pr-6 xl:pr-10 py-2">
 
                     {/* Header: Name and Bio */}
-                    <div className="flex flex-col items-start gap-1.5 w-full">
-                        <h2 className="text-3xl sm:text-4xl xl:text-[3.25rem] 2xl:text-[3.75rem] font-display font-black text-[#333] leading-none tracking-tight m-0 whitespace-nowrap">
+                    <div className="flex flex-col items-start w-full">
+                        <h2 className="text-3xl sm:text-4xl xl:text-[3.25rem] 2xl:text-[3.75rem] font-display font-black text-[#333] leading-tight tracking-tight m-0 whitespace-nowrap">
                             Trần Văn Dũng
                         </h2>
-                        <p className="text-xs sm:text-sm xl:text-[14.5px] text-[#555] font-medium leading-relaxed max-w-2xl mt-0.5">
+                        <p className="text-xs sm:text-sm xl:text-[14.5px] text-[#555] font-medium leading-relaxed max-w-2xl mt-3 xl:mt-4">
                             "{about.bio}"
                         </p>
                     </div>
