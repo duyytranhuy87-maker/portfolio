@@ -12,7 +12,7 @@ export function About() {
     };
 
     return (
-        <section id="about" className="bg-[#f2f2f2] w-full min-h-[100svh] py-16 lg:py-16 overflow-hidden relative border-b-brutal flex items-center font-sans select-none">
+        <section id="about" className="bg-[#f2f2f2] w-full min-h-[100svh] h-auto lg:h-[100svh] py-20 lg:py-0 overflow-hidden relative border-b-brutal flex items-center font-sans select-none">
 
             {/* Top UI Bar (Fake App Menu) */}
             <div className="absolute top-6 left-6 md:left-10 flex items-center gap-4 md:gap-6 z-50">
